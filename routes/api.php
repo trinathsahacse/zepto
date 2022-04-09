@@ -30,8 +30,10 @@ Route::post('product/get_products_cart', 'CartController@GetProductsCart');
 Route::post('product/update_products_cart', 'CartController@UpdateProductsCart');
 Route::post('product/add_products_cart', 'CartController@AddProductsCart');
 Route::post('product/delete_products_cart', 'CartController@DeleteProductsCart');
+Route::get('product/get_product_details/{id}', 'ProductController@GetProductDetails');
 Route::resource('product','ProductController');
 Route::post('update_product','ProductController@updateProduct');
+Route::post('get_search_products', 'ProductController@GetSearchProducts');
 
 Route::get('get_delivery_addresses', 'UserController@GetDeliveryAddresses');
 Route::post('update_delivery_address', 'UserController@UpdateDeliveryAddress');

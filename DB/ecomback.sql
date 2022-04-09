@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2022 at 09:49 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.1
+-- Generation Time: Apr 09, 2022 at 10:49 PM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -82,7 +81,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `description`, `image`, `slug`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'Men', 'this is main test product', NULL, 'men', 1, NULL, NULL, '2021-12-30 18:00:00', '2021-12-30 18:00:00');
+(1, 'Men', 'this is main test product', NULL, 'men', 1, NULL, NULL, '2021-12-30 18:00:00', '2021-12-30 18:00:00'),
+(3, 'Women', 'This is women product', NULL, NULL, 1, NULL, NULL, '2022-04-09 14:11:55', '2022-04-09 14:11:55');
 
 -- --------------------------------------------------------
 
@@ -317,7 +317,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_id`, `category_id`, `subcategory_id`, `childcategory_id`, `brand_id`, `name`, `short_description`, `description`, `main_image`, `price`, `unit_id`, `previous_price`, `quantity`, `review`, `discount`, `colors`, `number_of_sale`, `minimum_quantity`, `created_by`, `updated_by`, `status`, `created_at`, `updated_at`) VALUES
-(5, 'P-54864', 1, NULL, NULL, NULL, 'body shampoo', 'this is short description', 'this is long description new', 'uploads/users/2022/01/1641218864.jpg', 200, NULL, NULL, 10, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, '2022-01-03 08:07:44', '2022-01-03 12:01:41');
+(5, 'P-54864', 1, NULL, NULL, NULL, 'body shampoo', 'this is short description', 'this is long description new', 'uploads/users/2022/01/1641218864.jpg', 200, NULL, NULL, 10, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, '2022-01-03 08:07:44', '2022-01-03 12:01:41'),
+(6, 'P-61076', 1, NULL, NULL, NULL, 'Dior perfume', 'this is perfume', 'this is long description', 'uploads/users/2022/04/1649536172.jpg', 250, NULL, NULL, 10, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, '2022-04-09 14:29:32', '2022-04-09 14:29:32'),
+(7, 'P-82417', 1, NULL, NULL, NULL, 'polo t-shirt', 'this is handsome looking t-shirt', 'this is comfortable and quality full t-shirt', 'uploads/users/2022/04/1649537219.jpg', 20, NULL, NULL, 25, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, '2022-04-09 14:46:59', '2022-04-09 14:46:59'),
+(8, 'P-29347', 1, NULL, NULL, NULL, 'new trimmer', 'this is trimmer', 'this is super fast trimmer', 'uploads/users/2022/04/1649537337.jpg', 1000, NULL, NULL, 10, NULL, 0, NULL, NULL, NULL, NULL, NULL, 1, '2022-04-09 14:48:57', '2022-04-09 14:48:57');
 
 -- --------------------------------------------------------
 
@@ -478,13 +481,13 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `child_categories`
@@ -532,7 +535,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `sub_categories`

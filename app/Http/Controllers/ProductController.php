@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ChildCategory;
 use App\Models\Product;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
@@ -96,6 +97,24 @@ class ProductController extends Controller
         $product = Product::with('category')->findOrFail($id);
 
         return response()->json(['product' => $product], 200);
+    }
+
+    public function GetProductDetails($id)
+    {
+        $product = Product::with('category')->findOrFail($id);
+
+        return response()->json(['product' => $product], 200);
+    }
+
+    public function GetSearchProducts(Request $request)
+    {
+        // try{
+        $products = Product::where("name","like","%".$request->search."%")
+                            ->orWhere("product_id","like","%".$request->search."%")
+                            ->groupby("id")
+                            ->get();
+        $keywords = ChildCategory::where("name","like","%".$request->search."%")->get();
+        return response()->json(["products" => $products, "keywords" => $keywords],200);
     }
 
     /**
